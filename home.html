@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block scripts %}
+{{super()}}
+<head>
+    <script>
+    $('#id_cart').hide();
+    </script>
+    </head>
+{% endblock %}
+
+{% block content %}
+<form method="POST" autocomplete="off" class="form-inline" style="margin-left: 8cm; margin-top: 3cm;">
+    {{form1.hidden_tag()}}
+    <div class ="form-group">
+        {{wtf.quick_form(form1)}}
+    </div>
+</form>
+<br>
+<form method="POST" autocomplete="off" class="form-inline" style="margin-left: 8cm; margin-top: 3cm;">
+    {{form2.hidden_tag()}}
+    <div class ="form-group">
+        {{wtf.quick_form(form2)}}
+    </div>
+</form>
+<form method="POST" autocomplete="off" class="form-inline" style="margin-left: 8cm; margin-top: 3cm;">
+    {{form3.hidden_tag()}}
+    <div class ="form-group">
+        {{wtf.quick_form(form3)}}
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block scripts %}
+{{super()}}
+<head>
+    <script>
+    $('#name1').hide();
+    $('#simcacant1').offset({'top': 458, 'left':800});
+    $('#simcacant2').offset({'top': 510, 'left':800});
+    $('#embacant1').offset({'top': 424, 'left':450});
+    $('#embacant2').offset({'top': 476, 'left':450});
+    $('#submit1').offset({'top': 600, 'left': 735})
+    $('#name2').hide();
+    $('#emba').offset({'top': 410, 'left':450})
+    $('#simca').offset({'top': 410, 'left':800})
+    </script>
+    </head>
+{% endblock %}
+
+{% block content %}
+<form method="POST" autocomplete="off" class="form-inline" style="margin-left: 8cm; margin-top: 3cm;">
+    {{form1.hidden_tag()}}
+    <div class ="form-group" style="width: 3cm;">
+        {{form1.search(class = "form-control")}}
+    </div> <br>
+    <div class ="form-group">
+        {{form1.submit(class = "form-control")}}
+    </div>
+</form>
+<form method="POST" autocomplete="off" class="form-inline">
+    {{form2.hidden_tag()}}
+    <div class"form-group" style="margin-left: 15cm; width: 3cm;">
+        {{wtf.quick_form(form2)}}
+    </div>
+</form>
+<form method="POST" >
+    {{form3.hidden_tag()}}
+    <div class"form-group" style="margin-left: 15cm; width: 3cm;">
+        {{wtf.quick_form(form3)}}
+    </div>
+</form>
+<form method = "POST" class= "form-group" style="margin-left: 8cm; width: 5cm;">
+    {{form4.hidden_tag()}}
+    <div>
+    {{wtf.quick_form(form4)}}
+    </div>
+</form>
+    <label id = 'simca'>Simca</label>
+    <label id = 'emba'>Emba</label>
+{% endblock %}

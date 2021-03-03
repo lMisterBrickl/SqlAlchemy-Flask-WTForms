@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block content %}
+<form method="POST" autocomplete="off">
+  {{form.hidden_tag()}}
+    <div style="margin-left: 8cm;margin-right: 5cm;margin-top: 2cm; width: 20cm ;">
+      {{wtf.quick_form(form)}}
+    </div>
+</form>
+{% endblock %}
